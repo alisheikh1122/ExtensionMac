@@ -1,6 +1,9 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import Cocoa
+import Foundation
+
 @IBDesignable
 extension NSView {
     @IBInspectable var bgColor: NSColor? {

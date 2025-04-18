@@ -111,6 +111,7 @@ extension NSButton {
 extension NSView {
     public func addShimmer(shimmerColor: NSColor = .white) {
         wantsLayer = true
+        self.clipsToBounds = true
         let dark = shimmerColor.withAlphaComponent(0.2).cgColor
         let light = shimmerColor.withAlphaComponent(0.1).cgColor
         let clear = shimmerColor.withAlphaComponent(0.0).cgColor
@@ -137,22 +138,24 @@ extension NSView {
 @IBDesignable
 extension NSTextField {
     @IBInspectable var textColor: NSColor? {
-            get { textColor }
-            set { textColor = newValue ?? .labelColor }
-        }
+        get { self.textColor }
+        set { self.textColor = newValue ?? .labelColor }
+    }
     @IBInspectable var fontName: String? {
-        get { font?.fontName }
+        get { self.font?.fontName }
         set {
             if let fontName = newValue, let fontSize = font?.pointSize {
-                font = NSFont(name: fontName, size: fontSize)
+                self.font = NSFont(name: fontName, size: fontSize)
             }
         }
     }
     @IBInspectable var fontSize: CGFloat {
-        get { font?.pointSize ?? 0 }
+        get { self.font?.pointSize ?? 0 }
         set {
-            if let fontName = font?.fontName {
-                font = NSFont(name: fontName, size: newValue)
+            if let fontName = self.font?.fontName {
+                self.font = NSFont(name: fontName, size: newValue)
+            } else {
+                self.font = NSFont.systemFont(ofSize: newValue)
             }
         }
     }

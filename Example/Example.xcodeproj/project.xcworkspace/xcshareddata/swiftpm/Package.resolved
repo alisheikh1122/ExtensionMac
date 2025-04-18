@@ -1,0 +1,15 @@
+{
+  "originHash" : "cb92b5f5ea078aa398d2c6d995fc4d87b6f9c2e023647966c475dcebf52bae4c",
+  "pins" : [
+    {
+      "identity" : "extensionmac",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alisheikh1122/ExtensionMac.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f57e1968801a888217f36441c39cdfa95ad09759"
+      }
+    }
+  ],
+  "version" : 3
+}
